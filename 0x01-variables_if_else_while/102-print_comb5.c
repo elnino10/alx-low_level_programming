@@ -7,32 +7,21 @@
  */
 int main(void)
 {
-	int i, j, k, l;
+	int i, j;
 
-	for (i = 0; i < 10; i++)
+	for (i = 0; i < 100; i++)
 	{
-		for (j = 0; j < 10; j++)
+		for (j = 1 + 1; j < 100; j++)
 		{
-			for (k = i; k < 10; k++)
+			putchar(48 + (i / 10));
+			putchar(48 + (i % 10));
+			putchar(' ');
+			putchar(48 + (j / 10));
+			putchar(48 + (j % 10));
+			if (i != 98 || j != 99)
 			{
-				if (k == 0 || k == 9)
-					l = j + 1;
-				else
-					l = 0;
-				while (l < 10)
-				{
-					putchar(48 + i);
-					putchar(48 + j);
-					putchar(' ');
-					putchar(48 + k);
-					putchar(48 + l);
-					if (i != 9 || j != 8 || k != 9 || l != 9)
-					{
-						putchar(',');
-						putchar(' ');
-					}
-					l++;
-				}
+				putchar(',');
+				putchar(' ');
 			}
 		}
 	}
