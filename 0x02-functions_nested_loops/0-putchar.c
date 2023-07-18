@@ -1,5 +1,4 @@
-#include <unistd.h>
-
+#include "_putchar.h"
 /**
  *main - prints __putchar
  *
@@ -7,8 +6,12 @@
  */
 int main(void)
 {
-	char text[] = "_putchar\n";
+	char text[] = "_putchar";
+	int i;
 
-	write(1, &text, sizeof(text) - 1);
+	i = 0;
+	while (text[i] != '\0')
+		_putchar(text[i]);
+	_putchar('\n');
 	return (0);
 }
