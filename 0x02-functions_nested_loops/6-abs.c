@@ -2,7 +2,6 @@
 
 /**
  * _abs - prints the absolute value of any given number
- * @int: type of expected parameter
  * @a: value to be checked
  * Return: returns an unsigned integer value
  */
