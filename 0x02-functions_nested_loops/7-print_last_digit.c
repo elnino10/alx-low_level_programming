@@ -12,17 +12,17 @@ int print_last_digit(int num)
 	if (num > 0)
 	{
 		last = num % 10;
-		_putchar(last + 48);
+		_putchar(last + '0');
 	}
 	else if (num < 0)
 	{
 		last = -num % 10;
-		_putchar(last + 48);
+		_putchar(last + '0');
 	}
 	else
 	{
 		last = 0;
-		_putchar(last + 48);
+		_putchar(last + '0');
 	}
 	return (0);
 }
