@@ -3,7 +3,7 @@
 /**
  * print_last_digit - prints the last digit of a number
  * @num: number to check
- * Return: returns the last digit
+ * Return: returns the value of last digit
  */
 int print_last_digit(int num)
 {
@@ -12,17 +12,19 @@ int print_last_digit(int num)
 	if (num > 0)
 	{
 		last = num % 10;
-		_putchar(last + '0');
+		_putchar('0' + last);
+		return ('0' + last);
 	}
 	else if (num < 0)
 	{
-		last = -num % 10;
-		_putchar(last + '0');
+		last = num % 10;
+		_putchar('0' - last);
+		return (-last);
 	}
 	else
 	{
 		last = 0;
 		_putchar(last + '0');
+		return (last);
 	}
-	return (0);
 }
