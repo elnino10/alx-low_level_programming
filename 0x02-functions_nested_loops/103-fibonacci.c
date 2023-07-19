@@ -22,10 +22,9 @@ int main(void)
 	{
 		if (num[i] % 2 == 0)
 		{
-			printf("%lu, ", num[i]);
 			sumEven += num[i];
 		}
 	}
-	printf("\n%lu\n", sumEven);
+	printf("%lu\n", sumEven);
 	return (0);
 }
