@@ -7,7 +7,7 @@
 int main(void)
 {
 	int n;
-	int num[50];
+	unsigned long num[50];
 
 	num[0] = 1;
 	num[1] = 2;
@@ -20,9 +20,9 @@ int main(void)
 	for (n = 0; n < 50; n++)
 	{
 		if (n != 49)
-			printf("%d, ", num[n]);
+			printf("%lu, ", num[n]);
 		else
-			printf("%d\n", num[n]);
+			printf("%lu\n", num[n]);
 	}
 	return (0);
 }
