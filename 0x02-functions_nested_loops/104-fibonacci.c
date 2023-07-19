@@ -20,7 +20,8 @@ int main(void)
 		if (i != 97)
 			printf("%lu, ", num[i]);
 		else
-			printf("%lu\n", num[i]);
+			printf("%lu", num[i]);
 	}
+	printf("\n");
 	return (0);
 }
