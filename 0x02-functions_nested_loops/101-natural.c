@@ -2,20 +2,21 @@
 
 /**
  * main - prints sum of multiples of 3 and 5 in 1024
+ * Return: returns 0 (success)
  */
 int main(void)
 {
 	int k, n, m, sum, sum3, sum5;
 
-	k = 1024
+	k = 1024;
 	sum = 0;
 	sum3 = 0;
 	sum5 = 0;
 	for (n = 1, m = 1; n < k; n++, m++)
 	{
-		if (3*n < k)
+		if (3 * n < k)
 			sum3 += 3 * n;
-		if (5*m < k)
+		if (5 * m < k)
 			sum5 += 5 * m;
 	}
 	sum = sum3 + sum5;
