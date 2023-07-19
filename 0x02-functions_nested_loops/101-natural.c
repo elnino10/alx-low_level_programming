@@ -5,8 +5,9 @@
  */
 int main(void)
 {
-	int n, m, sum, sum3, sum5;
+	int k, n, m, sum, sum3, sum5;
 
+	k = 1024
 	sum = 0;
 	sum3 = 0;
 	sum5 = 0;
