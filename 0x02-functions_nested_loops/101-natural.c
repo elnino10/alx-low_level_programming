@@ -6,18 +6,19 @@
  */
 int main(void)
 {
-	int k, n, m, sum, sum3, sum5;
+	int k, n, sum, sum3, sum5;
 
 	k = 1024;
 	sum = 0;
 	sum3 = 0;
 	sum5 = 0;
-	for (n = 1, m = 1; n < k; n++, m++)
+	for (n = 1; 3 * n < k; n++)
 	{
-		if (3 * n < k)
-			sum3 += 3 * n;
-		if (5 * m < k)
-			sum5 += 5 * m;
+		sum3 += 3 * n;
+	}
+	for (n = 1; 5 * n < k; n++)
+	{
+		sum5 += 5 * n;
 	}
 	sum = sum3 + sum5;
 	printf("%d\n", sum);
