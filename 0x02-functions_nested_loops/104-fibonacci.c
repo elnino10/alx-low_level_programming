@@ -7,7 +7,7 @@
 int main(void)
 {
 	int i;
-	unsigned long num[98];
+	unsigned int num[98];
 
 	num[0] = 1;
 	num[1] = 2;
@@ -18,9 +18,9 @@ int main(void)
 	for (i = 0; i < 98; i++)
 	{
 		if (i != 97)
-			printf("%lu, ", num[i]);
+			printf("%u, ", num[i]);
 		else
-			printf("%lu", num[i]);
+			printf("%u", num[i]);
 	}
 	printf("\n");
 	return (0);
