@@ -6,21 +6,14 @@
  */
 int main(void)
 {
-	int k, n, sum, sum3, sum5;
+	int i, val, sum;
 
-	k = 1024;
-	sum = 0;
-	sum3 = 0;
-	sum5 = 0;
-	for (n = 1; 3 * n < k; n++)
+	val = 1024;
+	for (i = 1; i < val; i++)
 	{
-		sum3 += 3 * n;
+		if (i % 3 == 0 || i % 5 == 0)
+			sum += i;
 	}
-	for (n = 1; 5 * n < k; n++)
-	{
-		sum5 += 5 * n;
-	}
-	sum = sum3 + sum5;
 	printf("%d\n", sum);
 	return (0);
 }
