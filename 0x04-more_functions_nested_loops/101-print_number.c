@@ -25,6 +25,7 @@ void print_number(int n)
 		numBuffer[i++] = (n % 10) + '0';
 		n /= 10;
 	}
+
 	for (j = i - 1; j >= 0; j--)
 		_putchar(numBuffer[j]);
 }
