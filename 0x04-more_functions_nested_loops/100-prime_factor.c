@@ -5,8 +5,8 @@ int isPrime(int num);
 /**
  * main - finds largest prime factor of a number and prints it
  * Return: returns 0 if successful
- * largestPrimeFactor: checks for largest prime factor
- * isPrime: checks if the provided number is prime
+ * isPrime - checks if given number is prime
+ * largestPrimeFactor - checks largest prime factor
  */
 
 int main(void)
@@ -18,6 +18,11 @@ int main(void)
 	return (0);
 }
 
+/**
+ * isPrime - checks if the provided number is prime
+ * @num: number argument
+ * Return: 1 if true
+ */
 int isPrime(int num)
 {
 	int i;
@@ -33,7 +38,11 @@ int isPrime(int num)
 
 	return (1);
 }
-
+/**
+ * largestPrimeFactor - checks for largest prime factor
+ * @num: number argument
+ * Return: largest factor
+ */
 int largestPrimeFactor(int num)
 {
 	int i;
