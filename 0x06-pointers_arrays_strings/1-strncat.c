@@ -10,7 +10,7 @@ int _strlen(char *str);
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	int i, destlen, srclen;
+	int i, j, destlen, srclen;
 	char *ptr;
 
 	ptr = dest;
@@ -28,13 +28,16 @@ char *_strncat(char *dest, char *src, int n)
 	}
 	else
 	{
-		while (src[i] != '\0')
+		for (j = destlen; j < n; ++j)
 		{
-			dest[destlen] = src[i];
-			destlen++;
-			i++;
+			while (src[i] != '\0')
+			{
+				dest[destlen] = src[i];
+				destlen++;
+				i++;
+			}
+			dest[destlen] = '\0';
 		}
-		dest[destlen] = '\0';
 	}
 	return (ptr);
 }
