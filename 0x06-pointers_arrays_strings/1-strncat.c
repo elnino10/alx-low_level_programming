@@ -10,36 +10,16 @@ int _strlen(char *str);
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	int i, j, destlen, srclen;
-	char *ptr;
+	int i, len;
 
-	ptr = dest;
-	i = 0;
-	destlen = _strlen(dest);
-	srclen = _strlen(src);
-	if (srclen >= n)
+	len = _strlen(dest);
+	for (i = 0; src[i] != '\0' && i < n; i++)
 	{
-		while (src[i] < src[n] && n != 0)
-		{
-			dest[destlen] = src[i];
-			destlen++;
-			i++;
-		}
+		dest[len] = src[i];
+		len++;
 	}
-	else
-	{
-		for (j = destlen; j < (destlen + n); ++j)
-		{
-			while (src[i] != '\0')
-			{
-				dest[destlen] = src[i];
-				destlen++;
-				i++;
-			}
-			dest[destlen] = '\0';
-		}
-	}
-	return (ptr);
+	dest[len] = '\0';
+	return (dest);
 }
 
 /**
