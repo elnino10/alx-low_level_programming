@@ -24,6 +24,11 @@ char *_strcat(char *dest, char *src)
 	return (ptr);
 }
 
+/**
+ * _strlen - gets length of string
+ * @str: the string passed as argument
+ * Return: integer value of length
+ */
 int _strlen(char *str)
 {
 	int i, len;
