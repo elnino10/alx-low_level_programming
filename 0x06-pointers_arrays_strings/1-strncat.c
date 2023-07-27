@@ -28,7 +28,7 @@ char *_strncat(char *dest, char *src, int n)
 	}
 	else
 	{
-		for (j = destlen; j < n; ++j)
+		for (j = destlen; j < (destlen + n); ++j)
 		{
 			while (src[i] != '\0')
 			{
