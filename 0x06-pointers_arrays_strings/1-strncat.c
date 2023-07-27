@@ -34,8 +34,8 @@ char *_strncat(char *dest, char *src, int n)
 			destlen++;
 			i++;
 		}
+		dest[destlen] = '\0';
 	}
-	dest[destlen] = '\0';
 	return (ptr);
 }
 
