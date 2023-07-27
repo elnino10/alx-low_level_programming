@@ -19,7 +19,7 @@ char *_strncat(char *dest, char *src, int n)
 	srclen = _strlen(src);
 	if (srclen >= n)
 	{
-		while (src[i] < src[n])
+		while (src[i] < src[n] && n != 0)
 		{
 			dest[destlen] = src[i];
 			destlen++;
