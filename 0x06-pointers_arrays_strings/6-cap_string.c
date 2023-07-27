@@ -23,10 +23,7 @@ char *cap_string(char *str)
 				capitalizeNext = 1;
 		}
 
-/*		if (capitalizeNext && *str >= 'a' && *str <= 'z')
-			*str -= 32;
-		capitalizeNext = 0;
-*/		str++;
+		str++;
 	}
 	return (ptr);
 }
