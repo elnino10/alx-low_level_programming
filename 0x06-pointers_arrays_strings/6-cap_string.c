@@ -8,27 +8,25 @@
 char *cap_string(char *str)
 {
 	int i, capitalizeNext;
+	char del[] = " \t\n,.;!?\"(){}";
+	char *ptr = str;
 
 	capitalizeNext = 1;
-	for (i = 0; str[i] != '\0'; i++)
+	while (*str)
 	{
-		if (str[i] == ',' || str[i] == ';' || str[i] == '.'
-|| str[i] == '!' || str[i] == '?' || str[i] == '"' || str[i] == '('
-|| str[i] == ')' || str[i] == '{' || str[i] == '}' || str[i] == ' '
-|| str[i] == '\t' || str[i] == '\n')
+		if (capitalizeNext && *str >= 'a' && *str <= 'z')
+			*str -= 32;
+		capitalizeNext = 0;
+		for (i = 0; i < 13; ++i)
 		{
-			capitalizeNext = 1;
+			if (*str == del[i])
+				capitalizeNext = 1;
 		}
-		else if (str[i] >= 'A' && str[i] <= 'Z')
-		{
-			capitalizeNext = 0;
-		}
-		
-		if (capitalizeNext && str[i] >= 'a' && str[i] <= 'z')
-		{
-			str[i] -= ('a' - 'A');
-			capitalizeNext = 0;
-		}
+
+/*		if (capitalizeNext && *str >= 'a' && *str <= 'z')
+			*str -= 32;
+		capitalizeNext = 0;
+*/		str++;
 	}
-	return (str);
+	return (ptr);
 }
