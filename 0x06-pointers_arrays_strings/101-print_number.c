@@ -6,31 +6,21 @@
  */
 void print_number(int n)
 {
-	int i, j, num;
-	unsigned int buffArray[50];
+	int num;
 
-	i = 0;
 	if (n < 0)
 	{
 		_putchar('-');
 		num = -n;
-	}
-	else if (n == 0)
-	{
-		_putchar(0 + '0');
+		if (num > 10)
+			print_number(num / 10);
+		_putchar('0' + num % 10);
 	}
 	else
 	{
 		num = n;
+		if (num > 10)
+			print_number(num / 10);
+		_putchar('0' + num % 10);
 	}
-
-	while (num > 0)
-	{
-		buffArray[i] = num % 10;
-		num /= 10;
-		i++;
-	}
-
-	for (j = i - 1; j >= 0; --j)
-		_putchar(buffArray[j] + '0');
 }
