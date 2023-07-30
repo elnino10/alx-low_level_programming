@@ -6,26 +6,34 @@
  */
 void print_number(int n)
 {
-	int i, j, numBuffer[50];
-
 	if (n < 0)
 	{
 		_putchar('-');
-		n = -n;
-	}
-	if (n == 0)
-	{
-		_putchar('0');
-		return;
-	}
 
-	i = 0;
-	while (n > 0)
-	{
-		numBuffer[i++] = (n % 10) + '0';
-		n /= 10;
+		if (n >= -9)
+		{
+			_putchar('0' - n);
+		}
+		else
+		{
+			print_number(n / -10);
+			_putchar('0' - (n % 10));
+		}
 	}
-
-	for (j = i - 1; j >= 0; j--)
-		_putchar(numBuffer[j]);
+	else if (n == 0)
+	{
+		_putchar(n + '0');
+	}
+	else
+	{
+		if (n <= 9)
+		{
+			_putchar(n + '0');
+		}
+		else
+		{
+			print_number(n / 10);
+			_putchar((n % 10) + '0');
+		}
+	}
 }
