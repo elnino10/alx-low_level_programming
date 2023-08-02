@@ -8,9 +8,12 @@ int num_sqrt(int n, int start, int end);
  */
 int _sqrt_recursion(int n)
 {
+	if (n == 0 || n == 1)
+		return (n);
+
 	if (n < 0)
 		return (-1);
-	return (num_sqrt(n, 1, n / 2));
+	return (num_sqrt(n, 1, n));
 }
 
 /**
