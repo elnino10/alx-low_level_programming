@@ -26,14 +26,15 @@ int _sqrt_recursion(int n)
 int num_sqrt(int n, int start, int end)
 {
 	int mid;
+	long int sqr;
 
 	mid = (start + end) / 2;
-
+	sqr = (long int)mid * mid;
 	if (start <= end)
 	{
-		if (mid * mid == n)
+		if (sqr == n)
 			return (mid);
-		else if (mid * mid < n)
+		else if (sqr < n)
 			return (num_sqrt(n, mid + 1, end));
 		else
 			return (num_sqrt(n, start, mid - 1));
