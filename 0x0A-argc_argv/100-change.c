@@ -21,19 +21,16 @@ int main(int argc, char *argv[])
 
 	for (i = 1; i < argc; ++i)
 	{
-		if (isdigit(*argv[i]))
-		{
+		if (*argv[i] == '-')
+			printf("0\n");
+		else if (isdigit(*argv[i]))
 			cents = atoi(argv[i]);
-		}
 		else
-		{
-			printf("Error\n");
 			return (1);
-		}
 	}
 
 	if (cents == 0)
-		printf("0\n");
+		return (1);
 
 	change(cents);
 	return (0);
@@ -50,7 +47,7 @@ void change(int cents)
 
 	count = 0;
 	i = 0;
-	while (cents)
+	while (cents > 0)
 	{
 		if (cents >= arr[i])
 		{
