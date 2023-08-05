@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 void change(int);
 
 /**
@@ -12,18 +13,26 @@ int main(int argc, char *argv[])
 {
 	int cents, i;
 
-	for (i = 0; i < argc; ++i)
-	{
-		if (i > 0)
-			cents = atoi(argv[i]);
-	}
-
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	if (cents < 0)
+
+	for (i = 1; i < argc; ++i)
+	{
+		if (isdigit(*argv[i]))
+		{
+			cents = atoi(argv[i]);
+		}
+		else
+		{
+			printf("Error\n");
+			return (1);
+		}
+	}
+
+	if (cents == 0)
 		printf("0\n");
 
 	change(cents);
