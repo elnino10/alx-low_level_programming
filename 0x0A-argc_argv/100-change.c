@@ -47,7 +47,7 @@ void change(int cents)
 
 	count = 0;
 	i = 0;
-	while (cents > 0)
+	while (cents)
 	{
 		if (cents >= arr[i])
 		{
