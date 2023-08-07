@@ -9,19 +9,26 @@
  */
 char *_strdup(char *str)
 {
-	int i;
+	int i, len;
 	char *s;
 
-	s = malloc(sizeof(str));
-	if (*str == '\0')
+	i = 0;
+	len = 0;
+	while (str[len])
+		len++;
+
+	s = malloc(sizeof(char) * (len + 1));
+	if (str == NULL)
 		return (NULL);
 
-	i = 0;
-	while (*str)
+	if (s == NULL)
+		return (NULL);
+
+	while (str[i])
 	{
-		s[i] = *str;
-		str++;
+		s[i] = str[i];
 		i++;
 	}
+	s[i + 1] = '\0';
 	return (s);
 }
