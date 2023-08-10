@@ -17,24 +17,27 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int i, j, l1;
 	char *newstr;
 
+	i = j = 0;
 	l1 = strlen(s1);
 	newstr = mem_alloc(s1, s2, n);
-
-	if (s1 == NULL || s2 == NULL)
-		return ('\0');
-
-	i = 0;
-	while (i < l1)
+	if (newstr == NULL)
+		return (NULL);
+	if (s1 != NULL)
 	{
-		newstr[i] = s1[i];
-		i++;
+		while (i < l1)
+		{
+			newstr[i] = s1[i];
+			i++;
+		}
 	}
-
-	j = 0;
-	while (*s2 && j < n)
+	newstr[i] = '\0';
+	if (s2 != NULL)
 	{
-		newstr[i + j] = s2[j];
-		j++;
+		while (*s2 && j < n)
+		{
+			newstr[i + j] = s2[j];
+			j++;
+		}
 	}
 	newstr[i + j] = '\0';
 	return (newstr);
@@ -55,8 +58,6 @@ char *mem_alloc(char *s1, char *s2, unsigned int n)
 
 	len = get_len(s1, s2, n);
 	new_mem = malloc(len + 1);
-	if (new_mem == NULL)
-		return (NULL);
 	return (new_mem);
 }
 
@@ -71,8 +72,25 @@ int get_len(char *s1, char *s2, unsigned int n)
 {
 	unsigned int l1, l2;
 
-	l1 = strlen(s1);
-	l2 = strlen(s2);
+	if (s1 != NULL && s2 != NULL)
+	{
+		l1 = strlen(s1);
+		l2 = strlen(s2);
+	}
+	else if (s1 == NULL)
+	{
+		l1 = 0;
+		l2 = strlen(s2);
+	}
+	else if (s2 == NULL)
+	{
+		l1 = strlen(s1);
+		l2 = 0;
+	}
+	else
+	{
+		l1 = l2 = 0;
+	}
 	if (n < l2)
 		return (l1 + n);
 	else
