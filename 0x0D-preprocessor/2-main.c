@@ -1,6 +1,11 @@
 #include <stdio.h>
 
-int main() 
+/**
+ * main - prints the file name
+ *
+ * Return: 0 when successful
+ */
+int main(void)
 {
 	printf("%s\n", __FILE__);
 
