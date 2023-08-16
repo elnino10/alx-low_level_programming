@@ -1,3 +1,4 @@
+#include <stddef.h>
 #ifndef HEADER_FUNC_POINTERS
 #define HEADER_FUNC_POINTERS
 
