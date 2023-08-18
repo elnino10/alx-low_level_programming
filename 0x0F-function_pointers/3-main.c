@@ -9,7 +9,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int res, num1, num2;
+	int calc, num1, num2;
 	int (*op_func)(int, int);
 
 	if (argc == 4)
@@ -23,8 +23,8 @@ int main(int argc, char *argv[])
 		num1 = atoi(argv[1]);
 		num2 = atoi(argv[3]);
 
-		res = op_func(num1, num2);
-		printf("%d\n", res);
+		calc = op_func(num1, num2);
+		printf("%d\n", calc);
 	}
 	else
 	{
