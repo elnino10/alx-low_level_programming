@@ -55,7 +55,8 @@ void print_all(const char * const format, ...)
 		{"i", print_int},
 		{"f", print_float},
 		{"c", print_char},
-		{"s", print_str}
+		{"s", print_str},
+		{NULL, NULL}
 	};
 	int i, j;
 
@@ -63,7 +64,7 @@ void print_all(const char * const format, ...)
 	num_args = strlen(format);
 	i = 0;
 	split = "";
-	while (format != NULL && format[i] != '\0')
+	while (format && format[i])
 	{
 		j = 0;
 		while (j < num_args)
