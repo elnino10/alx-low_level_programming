@@ -65,7 +65,8 @@ void print_all(const char * const format, ...)
 	split = "";
 	while (format != NULL && format[i] != '\0')
 	{
-		for (j = 0; j < num_args; ++j)
+		j = 0;
+		while (j < num_args)
 		{
 			if (*print_f[j].s == format[i])
 			{
@@ -73,6 +74,7 @@ void print_all(const char * const format, ...)
 				print_f[j].func(args, split);
 				split = ", ";
 			}
+			j++;
 		}
 		i++;
 	}
