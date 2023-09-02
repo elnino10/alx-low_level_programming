@@ -15,19 +15,16 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	len_n = len_m = flip = 0;
 	store_n = n;
 	store_m = m;
-
 	while (n > 0)
 	{
 		n = n >> 1;
 		len_n++;
 	}
-
 	while (m > 0)
 	{
 		m = m >> 1;
 		len_m++;
 	}
-
 	m = store_m;
 	n = store_n;
 	if (len_m > len_n)
@@ -52,6 +49,5 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 			len_n--;
 		}
 	}
-
 	return (flip);
 }
