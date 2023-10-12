@@ -11,6 +11,9 @@ int sum_dlistint(dlistint_t *head)
 	dlistint_t *curr_node;
 	int sum = 0;
 
+	if (!head)
+		return (0);
+
 	curr_node = head;
 	while (curr_node != NULL)
 	{
