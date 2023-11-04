@@ -15,7 +15,6 @@ void hash_table_print(const hash_table_t *ht)
 
 	if (!ht)
 	{
-		printf("{}\n");
 		return;
 	}
 	count = node_len(ht);
