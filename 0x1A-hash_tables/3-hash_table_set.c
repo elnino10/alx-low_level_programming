@@ -39,6 +39,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 				curr_node->value = strdup(value);
 				return (1);
 				curr_node = curr_node->next;
+				return (1);
 			}
 		}
 		else
