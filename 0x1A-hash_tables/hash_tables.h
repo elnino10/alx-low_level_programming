@@ -46,5 +46,6 @@ void hash_table_delete(hash_table_t *ht);
 
 /*helper functions*/
 size_t node_len(const hash_table_t *ht);
+void free_bucket(hash_node_t *item);
 
 #endif
