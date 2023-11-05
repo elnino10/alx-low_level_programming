@@ -31,23 +31,20 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	else
 	{
 		curr_node = ht->array[index];
-		if (strcmp(curr_node->key, key) == 0)
+		while (curr_node)
 		{
-			while (curr_node)
+			/*update node with matching keys*/
+			if (strcmp(curr_node->key, key) == 0)
 			{
 				free(curr_node->value);
 				curr_node->value = strdup(value);
 				return (1);
-				curr_node = curr_node->next;
-				return (1);
 			}
+			curr_node = curr_node->next;
 		}
-		else
-		{
-			new_node->value = strdup(value); /*make node first at array[index]*/
-			new_node->next = ht->array[index];
-			ht->array[index] = new_node;
-		}
+		new_node->value = strdup(value); /*make node first at array[index]*/
+		new_node->next = ht->array[index];
+		ht->array[index] = new_node;
 	}
 	return (1);
 }
