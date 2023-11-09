@@ -43,7 +43,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
 	shash_node_t *new_node = NULL, *curr_node = NULL;
 	size_t index;
-	int result, val;
+	int result;
 
 	if (!ht || !key)
 		return (0);
@@ -54,23 +54,21 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	new_node->key = strdup(key);
 	new_node->value = strdup(value);
 
-	val = set_node_slist(ht, new_node); /*insert new node in sorted list*/
-	if (val)
+	set_node_slist(ht, new_node); /*insert new node in sorted list*/
+
+	if (!ht->array[index]) /*new node at first position if index empty*/
 	{
-		if (!ht->array[index]) /*new node at first position if index empty*/
-		{
-			new_node->next = NULL;
-			ht->array[index] = new_node;
-		}
-		else
-		{
-			curr_node = ht->array[index];
-			result = update_node_key(new_node, curr_node, key, value);
-			if (result == 1)
-				return (1);
-			new_node->next = curr_node; /*insert node as first in index*/
-			ht->array[index] = new_node;
-		}
+		new_node->next = NULL;
+		ht->array[index] = new_node;
+	}
+	else
+	{
+		curr_node = ht->array[index];
+		result = update_node_key(new_node, curr_node, key, value);
+		if (result == 1)
+			return (1);
+		new_node->next = curr_node; /*insert node as first in index*/
+		ht->array[index] = new_node;
 	}
 	return (1);
 }
@@ -172,6 +170,7 @@ int update_node_key(
 			curr_node->value = strdup((char *)value);
 			return (1);
 		}
+		curr_node = curr_node->next;
 	}
 	return (0);
 }
