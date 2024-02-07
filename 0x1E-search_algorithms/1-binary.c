@@ -16,7 +16,7 @@ int binary_search(int *array, size_t size, int value)
 {
 	int lb = 0, ub = size - 1, res = 0;
 
-	if (!array || !size)
+	if (!array || size == 0)
 		return (-1);
 
 	print_array(array, lb, ub);
