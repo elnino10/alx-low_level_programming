@@ -39,9 +39,6 @@ int binary_search_recurs(int *array, size_t lb, size_t ub, int value)
 {
 	int mid;
 
-	if (!array)
-		return (-1);
-
 	if (lb >= ub)
 		return (-1);
 	mid = lb + (ub - lb) / 2;
@@ -72,9 +69,6 @@ int binary_search_recurs(int *array, size_t lb, size_t ub, int value)
 void print_array(int *array, size_t lb, size_t ub)
 {
 	size_t i;
-
-	if (!array)
-		return (-1);
 
 	printf("Searching in array: ");
 	for (i = lb; i < ub; i++)
