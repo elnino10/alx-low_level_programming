@@ -42,7 +42,7 @@ int binary_search_recurs(int *array, size_t lb, size_t ub, int value)
 	if (lb >= ub)
 		return (-1);
 
-	mid = lb + (ub - lb) / 2;
+	mid = (lb + ub) / 2;
 
 	if (value == array[mid])
 		return (mid);
