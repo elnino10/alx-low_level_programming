@@ -36,19 +36,23 @@ int binary_search_recurs(int *array, size_t lb, size_t ub, int value)
 {
 	int mid;
 
-	print_array(array, lb, ub);
 
-	if (lb >= ub)
+	if (lb > ub)
 		return (-1);
 
-	mid = (lb + ub) / 2;
+	if (lb <= ub)
+	{
+		print_array(array, lb, ub);
+		mid = (lb + ub) / 2;
 
-	if (value == array[mid])
-		return (mid);
-	else if (value < array[mid])
-		return (binary_search_recurs(array, lb, mid - 1, value));
-	else
-		return (binary_search_recurs(array, mid + 1, ub, value));
+		if (value == array[mid])
+			return (mid);
+		else if (value < array[mid])
+			return (binary_search_recurs(array, lb, mid - 1, value));
+		else
+			return (binary_search_recurs(array, mid + 1, ub, value));
+	}
+	return (-1);
 }
 
 /**
