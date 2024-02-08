@@ -18,10 +18,7 @@ int exponential_search(int *array, size_t size, int value)
 
 	while (i < (ub - lb))
 	{
-		if (i < size)
-			printf("Value checked array[%ld] = [%d]\n", i, array[i]);
-		else
-			break;
+		printf("Value checked array[%ld] = [%d]\n", i, array[i]);
 		if (array[i] < value)
 			i *= 2; /*use powers of 2 as exponential ranges*/
 		else
