@@ -36,7 +36,6 @@ int binary_search_recurs(int *array, size_t lb, size_t ub, int value)
 {
 	int mid;
 
-
 	if (lb > ub)
 		return (-1);
 
