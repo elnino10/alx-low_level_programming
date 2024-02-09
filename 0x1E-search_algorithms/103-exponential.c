@@ -16,17 +16,15 @@ int exponential_search(int *array, size_t size, int value)
 	if (!array || !size)
 		return (-1);
 
-	while (i < (ub - lb))
+	if (array[lb] != value)
 	{
-		printf("Value checked array[%ld] = [%d]\n", i, array[i]);
-		if (array[i] < value)
-			i *= 2; /*use powers of 2 as exponential ranges*/
-		else
+		while (i < (ub - lb) && array[i] <= value)
 		{
-			ub = i;
-			break;
+			printf("Value checked array[%ld] = [%d]\n", i, array[i]);
+			i *= 2; /*use powers of 2 as exponential ranges*/
 		}
 	}
+	ub = i < size ? i : size - 1;
 	printf("Value found between indexes [%ld] and [%ld]\n", i / 2, ub);
 	return (binary_search_recurs(array, i / 2, ub, value));
 }
