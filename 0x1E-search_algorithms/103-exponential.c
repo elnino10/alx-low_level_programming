@@ -7,7 +7,8 @@
  * @size: number of elements in array
  * @value: value to search for
  *
- * Return: -1 if value is not present in array or if array is NULL
+ * Return: index position of the value -1 if value is not present
+ * in array or if array is NULL
  */
 int exponential_search(int *array, size_t size, int value)
 {

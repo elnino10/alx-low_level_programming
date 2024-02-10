@@ -24,7 +24,8 @@ int advanced_binary(int *array, size_t size, int value)
  * @ub: array upper bound index
  * @value: value to search for
  *
- * Return: -1 if value is not present in array or if array is NULL
+ * Return: index position of the value or -1 if value is not present in
+ * array or if array is NULL
  */
 int adv_binary_search_recurs(int *array, size_t lb, size_t ub, int value)
 {
